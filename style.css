@@ -52,14 +52,17 @@ header{
   background:
     linear-gradient(
       135deg,
-      #442063,
-      #6d28d9,
-      #c026d3,
-      #ec4899
+      #5b214b 0%,
+      #9d174d 25%,
+      #db2777 55%,
+      #f472b6 80%,
+      #c084fc 100%
     );
 }
 
-/* glowing background */
+/* =========================================
+   GLOW EFFECTS
+========================================= */
 
 header::before{
   content:"";
@@ -97,6 +100,10 @@ header::after{
   filter:blur(50px);
 }
 
+/* =========================================
+   HERO TEXT
+========================================= */
+
 header h1{
   position:relative;
   z-index:2;
@@ -114,7 +121,7 @@ header p{
   position:relative;
   z-index:2;
 
-  color:#fce7f3;
+  color:#fff1f7;
 
   font-size:1.15rem;
 
@@ -147,9 +154,9 @@ nav a{
 
   border-radius:999px;
 
-  background:rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0.12);
 
-  border:1px solid rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.15);
 
   transition:0.3s ease;
 
@@ -161,7 +168,7 @@ nav a{
 nav a:hover{
   background:white;
 
-  color:#7e22ce;
+  color:#be185d;
 
   transform:translateY(-2px);
 }
@@ -275,7 +282,7 @@ h2{
 }
 
 .card p{
-  color:#e9d5ff;
+  color:#f5d0fe;
 }
 
 .small{
@@ -283,11 +290,11 @@ h2{
 }
 
 /* =========================================
-   BUTTONS / LINKS
+   LINKS
 ========================================= */
 
 a{
-  color:#93c5fd;
+  color:#f9a8d4;
 
   text-decoration:none;
 
@@ -297,7 +304,7 @@ a{
 }
 
 a:hover{
-  color:#f9a8d4;
+  color:white;
 }
 
 /* =========================================
@@ -328,14 +335,14 @@ footer{
 
   background:#1a1023;
 
-  color:#d8b4fe;
+  color:#f5c2e7;
 
   border-top:
     1px solid rgba(255,255,255,0.08);
 }
 
 /* =========================================
-   ANIMATIONS
+   ANIMATION
 ========================================= */
 
 @keyframes fadeUp{
