@@ -1,5 +1,5 @@
 /* =========================================
-   GOOGLE FONT
+   FONT
 ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -14,14 +14,6 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
-/* =========================================
-   BODY
-========================================= */
-
 body{
   font-family:'Poppins', sans-serif;
 
@@ -32,157 +24,163 @@ body{
       #1b1025 100%
     );
 
-  color:#f8e8ff;
-
-  line-height:1.7;
+  color:white;
 
   overflow-x:hidden;
 }
 
 /* =========================================
-   HEADER
+   BACKGROUND BLURS
 ========================================= */
 
-header{
-  text-align:center;
+.bg-blur{
+  position:fixed;
 
-  padding:90px 20px 70px;
+  border-radius:50%;
 
-  background:
-    linear-gradient(
-      135deg,
-      #7c3aed,
-      #db2777
-    );
+  filter:blur(100px);
 
-  position:relative;
+  z-index:-1;
 
-  overflow:hidden;
+  opacity:0.5;
 }
 
-/* soft glow */
+.blur1{
+  width:300px;
+  height:300px;
 
-header::before{
-  content:"";
+  background:#db2777;
 
-  position:absolute;
+  top:-80px;
+  left:-80px;
+}
 
+.blur2{
   width:350px;
   height:350px;
 
-  background:rgba(255,255,255,0.10);
+  background:#7c3aed;
 
-  border-radius:50%;
-
-  top:-140px;
-  left:-100px;
-
-  filter:blur(40px);
-}
-
-header::after{
-  content:"";
-
-  position:absolute;
-
-  width:250px;
-  height:250px;
-
-  background:rgba(255,255,255,0.08);
-
-  border-radius:50%;
-
-  bottom:-120px;
-  right:-80px;
-
-  filter:blur(45px);
+  bottom:-100px;
+  right:-100px;
 }
 
 /* =========================================
-   HERO TEXT
+   HERO
 ========================================= */
 
-header h1{
-  position:relative;
-  z-index:2;
+.hero{
+  min-height:90vh;
 
-  font-size:3.5rem;
+  display:flex;
 
-  color:white;
+  align-items:center;
 
-  margin-bottom:14px;
+  justify-content:center;
 
-  font-weight:700;
+  text-align:center;
+
+  padding:80px 20px;
 }
 
-header p{
-  position:relative;
-  z-index:2;
-
-  max-width:650px;
-
-  margin:auto;
-
-  color:#ffe4f4;
-
-  font-size:1.05rem;
+.hero-content{
+  max-width:850px;
 }
 
-/* =========================================
-   NAVIGATION
-========================================= */
-
-nav{
-  position:relative;
-  z-index:2;
-
-  margin-top:32px;
-}
-
-nav a{
+.tag{
   display:inline-block;
 
-  text-decoration:none;
-
-  color:white;
-
-  margin:8px;
-
-  padding:11px 20px;
+  padding:10px 18px;
 
   border-radius:999px;
 
-  background:rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.08);
 
-  border:1px solid rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.1);
 
-  transition:0.3s ease;
+  color:#f9a8d4;
 
-  font-size:0.92rem;
+  margin-bottom:25px;
+
+  font-size:0.9rem;
 }
 
-nav a:hover{
-  background:white;
+.hero h1{
+  font-size:5rem;
 
-  color:#be185d;
+  line-height:1.1;
 
-  transform:translateY(-2px);
+  margin-bottom:20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #f9a8d4,
+      #c084fc
+    );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text{
+  max-width:700px;
+
+  margin:auto;
+
+  color:#f5d0fe;
+
+  font-size:1.15rem;
+
+  line-height:1.8;
 }
 
 /* =========================================
-   CONTENT WRAPPER
+   BUTTONS
 ========================================= */
 
-.content-wrap{
-  max-width:1200px;
+.hero-buttons{
+  margin-top:35px;
+}
 
-  margin:-35px auto 0;
+.btn{
+  display:inline-block;
 
-  padding:0 20px 60px;
+  padding:14px 24px;
 
-  position:relative;
+  border-radius:999px;
 
-  z-index:5;
+  text-decoration:none;
+
+  margin:10px;
+
+  transition:0.3s ease;
+
+  font-weight:600;
+}
+
+.primary{
+  background:
+    linear-gradient(
+      135deg,
+      #db2777,
+      #7c3aed
+    );
+
+  color:white;
+}
+
+.secondary{
+  border:1px solid rgba(255,255,255,0.15);
+
+  background:rgba(255,255,255,0.06);
+
+  color:white;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
 }
 
 /* =========================================
@@ -190,19 +188,19 @@ nav a:hover{
 ========================================= */
 
 .section{
-  margin-bottom:70px;
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:80px 20px;
 }
 
-/* =========================================
-   TITLES
-========================================= */
-
-h2{
+.section h2{
   text-align:center;
 
-  margin-bottom:35px;
+  font-size:2.2rem;
 
-  font-size:2rem;
+  margin-bottom:45px;
 
   color:#f9a8d4;
 }
@@ -217,42 +215,35 @@ h2{
   grid-template-columns:
     repeat(auto-fit,minmax(280px,1fr));
 
-  gap:26px;
+  gap:28px;
 }
 
 /* =========================================
    CARDS
 ========================================= */
 
-.card{
-  background:#2b1d3b;
+.card,
+.glass-box,
+.instagram-box{
+  background:rgba(255,255,255,0.07);
 
   border:1px solid rgba(255,255,255,0.08);
 
-  border-radius:24px;
+  border-radius:28px;
 
-  padding:22px;
+  padding:24px;
+
+  backdrop-filter:blur(14px);
 
   box-shadow:
     0 10px 30px rgba(0,0,0,0.22);
 
   transition:0.3s ease;
-
-  animation:fadeUp 0.8s ease;
 }
 
 .card:hover{
   transform:translateY(-6px);
-
-  border:1px solid rgba(255,255,255,0.14);
-
-  box-shadow:
-    0 16px 40px rgba(0,0,0,0.30);
 }
-
-/* =========================================
-   IMAGES
-========================================= */
 
 .card img{
   width:100%;
@@ -261,68 +252,39 @@ h2{
 
   object-fit:cover;
 
-  border-radius:18px;
+  border-radius:20px;
 
   margin-bottom:18px;
-
-  transition:0.4s ease;
 }
-
-.card:hover img{
-  transform:scale(1.03);
-}
-
-/* =========================================
-   TEXT
-========================================= */
 
 .card h3{
-  color:white;
-
   margin-bottom:10px;
 
-  font-size:1.25rem;
+  color:white;
 }
 
 .card p{
   color:#f5d0fe;
 }
 
-.small{
-  font-size:0.95rem;
-}
-
 /* =========================================
-   LINKS
+   ABOUT / INSTAGRAM
 ========================================= */
 
-a{
-  color:#f9a8d4;
+.glass-box,
+.instagram-box{
+  max-width:850px;
 
-  text-decoration:none;
+  margin:auto;
 
-  font-weight:600;
-
-  transition:0.3s ease;
-}
-
-a:hover{
-  color:white;
-}
-
-/* =========================================
-   SOCIAL / CONTACT
-========================================= */
-
-.social-card,
-.contact-box{
   text-align:center;
 }
 
-.social-icon{
-  font-size:2.4rem;
+.glass-box p,
+.instagram-box p{
+  color:#f5d0fe;
 
-  margin-bottom:12px;
+  line-height:1.8;
 }
 
 /* =========================================
@@ -332,31 +294,14 @@ a:hover{
 footer{
   text-align:center;
 
-  padding:40px 20px;
+  padding:45px 20px;
 
-  background:#160d20;
-
-  color:#f5c2e7;
+  color:#f9a8d4;
 
   border-top:
-    1px solid rgba(255,255,255,0.06);
-}
+    1px solid rgba(255,255,255,0.08);
 
-/* =========================================
-   ANIMATION
-========================================= */
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  margin-top:60px;
 }
 
 /* =========================================
@@ -365,30 +310,16 @@ footer{
 
 @media(max-width:768px){
 
-  header{
-    padding:75px 20px 60px;
+  .hero h1{
+    font-size:3rem;
   }
 
-  header h1{
-    font-size:2.5rem;
+  .hero-text{
+    font-size:1rem;
   }
 
-  header p{
-    font-size:0.95rem;
-  }
-
-  nav a{
-    padding:10px 15px;
-
-    font-size:0.88rem;
-  }
-
-  h2{
-    font-size:1.7rem;
-  }
-
-  .content-wrap{
-    padding:0 16px 50px;
+  .section h2{
+    font-size:1.8rem;
   }
 
   .card img{
